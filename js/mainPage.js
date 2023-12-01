@@ -7,6 +7,6 @@ const quizzes = [
     },
 ]
 
-const goToQuiz = () => {
-    window.location.href = "/quiz"
+const goToQuiz = (id) => {
+    window.location.href = `/answerQuiz/${id}`
 }

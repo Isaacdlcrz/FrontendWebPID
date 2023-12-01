@@ -14,16 +14,6 @@ app.get('', (req, res) => {
     res.sendFile(URI);
 })
 
-// app.get('/js/index.js', (req, res) => {
-//     const URI = path.join(__dirname, 'js', 'index.js');
-//     res.sendFile(URI);
-// })
-//
-// app.get('/js/login.js', (req, res) => {
-//     const URI = path.join(__dirname, 'js', 'login.js');
-//     res.sendFile(URI);
-// })
-
 app.get('/main', (req, res) => {
     const URI = path.join(__dirname, 'views', 'mainPage.html');
     res.sendFile(URI);
@@ -31,6 +21,16 @@ app.get('/main', (req, res) => {
 
 app.get('/login', (req, res) => {
     const URI = path.join(__dirname, 'views', 'login.html');
+    res.sendFile(URI);
+})
+
+
+app.get('/answerQuiz', (req, res) => {
+    res.redirect(`/main`)
+})
+
+app.get('/answerQuiz/:id', (req, res) => {
+    const URI = path.join(__dirname, 'views', 'answerQuiz.html');
     res.sendFile(URI);
 })
 
