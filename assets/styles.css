@@ -1,0 +1,21 @@
+footer, header {
+    height: 80px;
+}
+
+header img {
+    height: 65px;
+    filter: invert(1)
+}
+
+.appLogo {
+    height: 160px;
+}
+
+.carousel-image {
+    height: 30em;
+    object-fit: cover;
+}
+
+.carousel-item {
+    cursor: pointer;
+}
