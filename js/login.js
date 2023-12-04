@@ -4,7 +4,13 @@ loginForm.on('submit', e => {
     e.preventDefault();
     const emailInput = $('#emailInput')
     const passwordInput = $('#passwordInput')
-    // Here we get the values of the inputs to send them to the api.
-    // In the meantime we continue to the main page
-    window.location.href = "/main"
+
+    console.log(emailInput.val(), "email")
+    console.log(passwordInput.val(), "password")
+    jQuery.post( "https://quizmaniabackend.onrender.com/login",
+        {email: emailInput.val(), password: passwordInput.val()},
+        () => {
+            console.log()
+        },
+        "json").done()
 })

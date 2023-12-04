@@ -19,3 +19,7 @@ header img {
 .carousel-item {
     cursor: pointer;
 }
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.35);
+}

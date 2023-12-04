@@ -24,6 +24,15 @@ app.get('/login', (req, res) => {
     res.sendFile(URI);
 })
 
+app.get('/register', (req, res) => {
+    const URI = path.join(__dirname, 'views', 'register.html');
+    res.sendFile(URI);
+})
+
+app.get('/createQuiz', (req, res) => {
+    const URI = path.join(__dirname, 'views', 'createQuiz.html');
+    res.sendFile(URI);
+})
 
 app.get('/answerQuiz', (req, res) => {
     res.redirect(`/main`)
