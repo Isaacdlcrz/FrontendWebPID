@@ -23,3 +23,8 @@ header img {
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.35);
 }
+
+.quizManiaLink {
+    text-decoration: none;
+
+}

@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="../assets/styles.css">
     <title>Document</title>
 </head>
-<header class="d-flex justify-content-center align-items-center bg-black text-white px-3 mb-4">
+<header class="d-flex justify-content-center align-items-center bg-black px-3 mb-4">
     <div class="">
         <img src="../assets/logo.png" alt="">
     </div>
     <div class="ms-3">
-        <h1>QuizMania</h1>
+        <a href="/main" class="quizManiaLink text-white">
+            <h1>QuizMania</h1>
+        </a>
     </div>
 </header>
 <body>
@@ -27,12 +29,16 @@
     </div>
     <div class="row mb-3">
         <div class="col-6">
-            <label for="dificultad" class="form-label">Dificultad</label>
-            <input type="text" class="form-control" id="dificultad">
+            <label for="difficulty" class="form-label">Dificultad</label>
+            <select class="form-select" aria-label="Default select example" id="difficulty">
+                <option selected>Seleccionar dificultad</option>
+            </select>
         </div>
         <div class="col-6">
-            <label for="categoria" class="form-label">Categoría</label>
-            <input type="text" class="form-control" id="categoria">
+            <label for="category" class="form-label">Categoría</label>
+            <select class="form-select" aria-label="Default select example" id="category">
+                <option selected>Seleccionar categoría</option>
+            </select>
         </div>
     </div>
     <div class="row">
@@ -41,7 +47,81 @@
 
         </div>
         <div class="d-grid col-3">
-            <button class="btn btn-primary">+</button>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addQuestionModal">+</button>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="d-grid col">
+            <button class="btn btn-primary">Crear Quiz</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addQuestionModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar Pregunta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createQuestionModal">Crear nueva pregunta</button>
+                </div>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                        The current link item
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+                    <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+                    <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+                    <a href="#" class="list-group-item list-group-item-action">A fifth link item</a>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Crear</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="createQuestionModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Crear Pregunta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label for="questionName" class="form-label">Nombre de Pregunta</label>
+                        <input type="text" class="form-control" id="questionName">
+                    </div>
+                    <div class="col-6">
+                        <label for="questionType" class="form-label">Tipo de Pregunta</label>
+                        <select class="form-select" aria-label="Default select example" id="questionType">
+                            <option selected>Seleccionar tipo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                        </div>
+                        <input type="text" class="form-control" aria-label="Text input with checkbox">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <button class="btn btn-primary">Agregar opción</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Crear</button>
+            </div>
         </div>
     </div>
 </div>
