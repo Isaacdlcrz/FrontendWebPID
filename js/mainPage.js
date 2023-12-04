@@ -17,20 +17,24 @@ const getQuizzes = async () => {
             // Set the title of the category
             let indicatorCounter = 0;
             for (const quiz of category.quizzes) {
+                const quizId = quiz._id;
                 const carouselIndicators = $(`#${carouselIndicatorId}`);
                 carouselIndicators.append(`
                     <button type="button" data-bs-target="#${carouselId}" data-bs-slide-to="${indicatorCounter + 1}" class="${indicatorCounter === 0 ? 'active' : ''}" aria-current="${indicatorCounter === 0}" aria-label="Slide ${indicatorCounter}"></button>
                 `);
 
                 const carouselInners = $(`#${carouselInnerId}`);
-                carouselInners.append(`
-                    <div class="carousel-item ${indicatorCounter === 0 ? 'active' : ''}" onclick="goToQuiz(category._id)">
+                console.log(quizId, "Quizz")
+
+                const carouselItem = `
+                    <div class="carousel-item ${indicatorCounter === 0 ? 'active' : ''}" onclick="goToQuiz('${quizId}')">
                         <img src="https://dineroynegocios.mx/wp-content/uploads/2023/10/Mexico-cultura-1200x750.jpg" class="d-block w-100 carousel-image" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h2>${quiz.name}</h2>
                         </div>
                     </div>
-                `);
+                `
+                carouselInners.append(carouselItem);
 
                 indicatorCounter++;
             }
@@ -83,6 +87,8 @@ const createCategoryGroup = async (category) => {
 
 
 const goToQuiz = (id) => {
+    console.log(id, "Idididi")
+    typeof id;
     window.location.href = `/answerQuiz/${id}`
 }
 

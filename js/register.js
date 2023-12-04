@@ -10,7 +10,27 @@ registerForm.on('submit', e => {
         alert("Las contraseñas no coinciden, intenta otra vez.")
         return
     }
-    // Here we get the values of the inputs to send them to the api.
-    // In the meantime we continue to the main page
-    window.location.href = "/main"
+
+    const userData = {
+        name: nameInput.val(),
+        email: emailInput.val(),
+        password: passwordInput.val()
+    }
+    $.ajax({
+        url: 'https://quizmaniabackend.onrender.com/register',
+        type: 'post',
+        contentType: 'application/json',
+        data: JSON.stringify(userData),
+        processData: false,
+        success: res => {
+            console.log(res, "resss")
+            if (res) {
+                console.log(res)
+                window.location.href = "/"
+            }
+            else
+                alert("No token received")
+        },
+        error: () => {alert("Error en registro")}
+    })
 })
